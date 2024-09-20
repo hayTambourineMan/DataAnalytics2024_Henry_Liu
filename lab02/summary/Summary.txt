@@ -1,0 +1,69 @@
+> summary(lin.mod.bdhnew)
+
+Call:
+lm(formula = BDH.new ~ population_log, data = epi.results.sub)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-43.297 -12.024   2.143  12.667  38.182 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     52.7222    11.7516   4.486 1.36e-05 ***
+population_log  -0.6544     1.6830  -0.389    0.698    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 17.94 on 163 degrees of freedom
+Multiple R-squared:  0.0009266,	Adjusted R-squared:  -0.005203 
+F-statistic: 0.1512 on 1 and 163 DF,  p-value: 0.6979
+
+
+
+
+
+> summary(lin.mod.ecsnew)
+
+Call:
+lm(formula = ECS.new ~ population_log, data = epi.results.sub)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-37.340 -10.468   1.392  11.569  32.059 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      45.652     13.013   3.508 0.000643 ***
+population_log    1.252      1.853   0.676 0.500626    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 16.75 on 116 degrees of freedom
+  (47 observations deleted due to missingness)
+Multiple R-squared:  0.00392,   Adjusted R-squared:  -0.004667 
+F-statistic: 0.4565 on 1 and 116 DF,  p-value: 0.5006
+
+
+
+
+
+
+> summary(lin.mod.econew)
+
+Call:
+lm(formula = ECO.new ~ population_log, data = epi.results.sub)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-26.685  -8.381  -1.575   9.557  32.129 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     56.1859     8.5811   6.548 7.27e-10 ***
+population_log  -0.6774     1.2289  -0.551    0.582    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 13.1 on 163 degrees of freedom
+Multiple R-squared:  0.001861,  Adjusted R-squared:  -0.004263 
+F-statistic: 0.3039 on 1 and 163 DF,  p-value: 0.5822
