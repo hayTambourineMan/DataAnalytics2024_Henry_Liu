@@ -1,0 +1,58 @@
+Exercise 1:
+> cat("Contingency Table for Feature Set 1:\n")
+Contingency Table for Feature Set 1:
+> table(Predicted = pred_1, Actual = abalone$age.group)
+         Actual
+Predicted young adult  old
+    young   988   291   79
+    adult   406  1172  564
+    old      13   347  317
+> cat("Contingency Table for Feature Set 2:\n")
+Contingency Table for Feature Set 2:
+> table(Predicted = pred_2, Actual = abalone$age.group)
+         Actual
+Predicted young adult  old
+    young  1158   497  192
+    adult   244  1090  515
+    old       5   223  253
+> cat("Contingency Table for Feature Set 3:\n")
+Contingency Table for Feature Set 3:
+> table(Predicted = pred_3, Actual = abalone$age.group)
+         Actual
+Predicted young adult  old
+    young  1128   421  170
+    adult   275  1142  597
+    old       4   247  193
+
+Exercise 2:
+> cat("Best k for Subset 1: ", best_k_1, "\n")
+Best k for Subset 1:  11 
+> KNNpred_best_1 <- knn(train = subset_1.train, test = subset_1.test, cl = iris.train.labels, k = best_k_1)
+> table(Actual = KNNpred_best_1, Predicted = iris.test.labels)
+            Predicted
+Actual       setosa versicolor virginica
+  setosa         14          0         0
+  versicolor      0         13         0
+  virginica       0          5        13
+> cat("Best k for Subset 2: ", best_k_2, "\n")
+Best k for Subset 2:  5 
+> KNNpred_best_2 <- knn(train = subset_2.train, test = subset_2.test, cl = iris.train.labels, k = best_k_2)
+> table(Actual = KNNpred_best_2, Predicted = iris.test.labels)
+            Predicted
+Actual       setosa versicolor virginica
+  setosa         14          0         0
+  versicolor      0         18         0
+  virginica       0          0        13
+
+Exercise 3:
+> # Evaluate clustering by comparing to actual species
+> labeled.clusters_iris <- as.character(assigned.clusters_iris)
+> labeled.clusters_iris[labeled.clusters_iris == 1] <- "setosa"
+> labeled.clusters_iris[labeled.clusters_iris == 2] <- "versicolor"
+> labeled.clusters_iris[labeled.clusters_iris == 3] <- "virginica"
+> table(labeled.clusters_iris, iris$Species)
+                     
+labeled.clusters_iris setosa versicolor virginica
+           setosa          0         48        14
+           versicolor     50          0         0
+           virginica       0          2        36
